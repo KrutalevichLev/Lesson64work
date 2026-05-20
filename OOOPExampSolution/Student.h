@@ -58,6 +58,13 @@ public:
 		alive = student.alive;
 	}
 
+	~Student() {
+		cout << "Destructor";
+		if (marks != NULL) {
+			delete[] marks;
+		}
+	}
+
 	string toString() {
 		string msg = "Student: ";
 		msg += name;
