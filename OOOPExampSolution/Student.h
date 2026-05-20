@@ -18,7 +18,7 @@ public:
 		id = 0;
 		name = "";
 		age = 0;
-		mark = 0;
+		marks = new double[3] {10, 9, 7};
 		class_number = 0;
 		class_letter = '\0';
 		alive = false;
@@ -28,7 +28,7 @@ public:
 		id = i;
 		name = nm;
 		age = ag;
-		mark = mrk;
+		marks = new double[3] {10, 9, 7};
 		class_number = number;
 		class_letter = letter;
 		alive = a;
@@ -38,7 +38,7 @@ public:
 		id = 0;
 		name = nm;
 		age = ag;
-		mark = 0;
+		marks = new double[3] {10, 9, 7};
 		class_number = 0;
 		class_letter = '\0';
 		alive = true;
@@ -49,7 +49,10 @@ public:
 		id = student.id;
 		name = student.name;
 		age = student.age;
-		mark = student.mark;
+		marks = new double[3] {
+			student.marks[0],
+			student.marks[1],
+			student.marks[2]};
 		class_number = student.class_number;
 		class_letter = student.class_letter;
 		alive = student.alive;
@@ -61,7 +64,7 @@ public:
 		msg += ", id = " + to_string(id);
 		msg += ", age = " + to_string(age);
 		msg += ", class = " + to_string(class_number) + to_string(class_letter);
-		msg += ", mark = " + to_string(mark);
+		msg += ", marks = " + to_string(marks[0]) + " " + to_string(marks[1]) + " " + to_string(marks[2]);
 		msg += ", alive = ";
 		msg += (alive ? " yes" : "no");
 
