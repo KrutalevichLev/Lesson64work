@@ -4,77 +4,57 @@
 using namespace std;
 
 class Student {
-
-public:
+private:
 	int id;
 	string name;
+	int count;
 	int age;
-	double* marks;
-	int class_number;
-	char class_letter;
+	int* marks;
+	int classNumber;
+	char classLetter;
 	bool alive;
 
-	Student() {
-		id = 0;
-		name = "";
-		age = 0;
-		marks = new double[3] {10, 9, 7};
-		class_number = 0;
-		class_letter = '\0';
-		alive = false;
-	}
+public:
 
-	Student(int i, string nm, int ag, int number, char letter, double mrk, bool a) {
-		id = i;
-		name = nm;
-		age = ag;
-		marks = new double[3] {10, 9, 7};
-		class_number = number;
-		class_letter = letter;
-		alive = a;
-	}
+	Student();
 
-	Student(string nm, int ag) {
-		id = 0;
-		name = nm;
-		age = ag;
-		marks = new double[3] {10, 9, 7};
-		class_number = 0;
-		class_letter = '\0';
-		alive = true;
-	}
+	Student(int i, string nm, int ag, int number, char letter, double mrk, bool a);
 
-	Student(const Student& student) {
-		cout << "Student copy-cinstructor//]]..//";
-		id = student.id;
-		name = student.name;
-		age = student.age;
-		marks = new double[3] {
-			student.marks[0],
-			student.marks[1],
-			student.marks[2]};
-		class_number = student.class_number;
-		class_letter = student.class_letter;
-		alive = student.alive;
-	}
+	Student(string nm, int ag);
 
-	~Student() {
-		cout << "Destructor";
-		if (marks != NULL) {
-			delete[] marks;
-		}
-	}
+	Student(const Student& student);
 
-	string toString() {
-		string msg = "Student: ";
-		msg += name;
-		msg += ", id = " + to_string(id);
-		msg += ", age = " + to_string(age);
-		msg += ", class = " + to_string(class_number) + to_string(class_letter);
-		msg += ", marks = " + to_string(marks[0]) + " " + to_string(marks[1]) + " " + to_string(marks[2]);
-		msg += ", alive = ";
-		msg += (alive ? " yes" : "no");
+	~Student();
 
-		return msg;
-	}
+	int getCount();
+
+	int getID();
+
+	void setID(int i); 
+
+	string getName();
+
+	void setName(string nm);
+
+	int getAge();
+
+	void setAge(int a); 
+
+	int getClassNumber();
+
+	void setClassNumber(int number);
+
+	char getClassLetter();
+
+	void setClassLetter(char letter);
+
+	bool isAlive();
+
+	void setAlive(bool a);
+
+	void setMarks(int* ms, int c);
+
+	int* getMarks();
+
+	string toString();
 };
