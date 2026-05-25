@@ -2,7 +2,7 @@
 
 
 Student::Student() {
-	count = 0;
+	count = 3;
 	id = 0;
 	name = "";
 	age = 0;
