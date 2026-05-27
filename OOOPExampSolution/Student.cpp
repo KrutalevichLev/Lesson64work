@@ -12,41 +12,41 @@ Student::Student() {
 	alive = false;
 }
 
-Student::Student(int i, string nm, int ag, int number, char letter, double mrk, bool a) {
-	id = i;
+Student::Student(int id, string name, int age, int classNumber, char classLetter, double mark, bool alive) {
+	this->id = id;
 	count = 3;
-	name = nm;
-	age = ag;
+	this->name = name;
+	this->age = age;
 	marks = new int[3] {10, 9, 7};
-	classNumber = number;
-	classLetter = letter;
-	alive = a;
+	this->classNumber = classNumber;
+	this->classLetter = classLetter;
+	this->alive = alive;
 }
 
-Student::Student(string nm, int ag) {
-	id = 0;
-	count = 3;
-	name = nm;
-	age = ag;
-	marks = new int[3] {10, 9, 7};
-	classNumber = 0;
-	classLetter = '\0';
-	alive = true;
+Student::Student(string name, int age) {
+	this->id = 0;
+	this->count = 3;
+	this->name = name;
+	this->age = age;
+	this->marks = new int[3] {10, 9, 7};
+	this->classNumber = 0;
+	this->classLetter = '\0';
+	this->alive = true;
 }
 
 Student::Student(const Student& student) {
 	cout << "Student copy-cinstructor//]]..//";
-	id = student.id;
-	count = 3;
-	name = student.name;
-	age = student.age;
-	marks = new int[3] {
+	this->id = student.id;
+	this->count = 3;
+	this->name = student.name;
+	this->age = student.age;
+	this->marks = new int[3] {
 		student.marks[0],
 			student.marks[1],
 			student.marks[2]};
-	classNumber = student.classNumber;
-	classLetter = student.classLetter;
-	alive = student.alive;
+	this->classNumber = student.classNumber;
+	this->classLetter = student.classLetter;
+	this->alive = student.alive;
 }
 
 Student::~Student() {
@@ -64,8 +64,8 @@ int Student::getID() {
 	return id;
 }
 
-void Student::setID(int i) {
-	id = i;
+void Student::setID(int id) {
+	this->id = id;
 }
 
 string Student::getName() {
@@ -73,16 +73,16 @@ string Student::getName() {
 }
 
 void Student::setName(string nm) {
-	name = nm;
+	this->name = name;
 }
 
 int Student::getAge() {
 	return age;
 }
 
-void Student::setAge(int a) {
-	if (a > 10) {
-		age = a;
+void Student::setAge(int age) {
+	if (age > 10) {
+		this->age = age;
 	}
 }
 
@@ -90,9 +90,9 @@ int Student::getClassNumber() {
 	return classNumber;
 }
 
-void Student::setClassNumber(int number) {
-	if (number >= 1 && number <= 11) {
-		classNumber = number;
+void Student::setClassNumber(int classNumber) {
+	if (classNumber >= 1 && classNumber <= 11) {
+		this->classNumber = classNumber;
 	}
 }
 
@@ -100,9 +100,9 @@ char Student::getClassLetter() {
 	return classLetter;
 }
 
-void Student::setClassLetter(char letter) {
-	if (letter >= 'A' && letter <= 'Z') {
-		classLetter = letter;
+void Student::setClassLetter(char classLetter) {
+	if (classLetter >= 'A' && classLetter <= 'Z') {
+		this->classLetter = classLetter;
 	}
 }
 
@@ -110,14 +110,14 @@ bool Student::isAlive() {
 	return alive;
 }
 
-void Student::setAlive(bool a) {
-	alive = a;
+void Student::setAlive(bool alive) {
+	this->alive = alive;
 }
 
-void Student::setMarks(int* ms, int c) {
+void Student::setMarks(int* marks, int c) {
 	if (marks != NULL) {
 		delete[] marks;
-		marks = new int[c];
+		this->marks = new int[c];
 
 	}
 }

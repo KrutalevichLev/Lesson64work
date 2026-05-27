@@ -18,9 +18,9 @@ public:
 
 	Student();
 
-	Student(int i, string nm, int ag, int number, char letter, double mrk, bool a);
+	Student(int id, string name, int age, int classNumber, char classLetter, double mark, bool alive);
 
-	Student(string nm, int ag);
+	Student(string name, int age);
 
 	Student(const Student& student);
 
@@ -30,29 +30,29 @@ public:
 
 	int getID();
 
-	void setID(int i); 
+	void setID(int id); 
 
 	string getName();
 
-	void setName(string nm);
+	void setName(string name);
 
 	int getAge();
 
-	void setAge(int a); 
+	void setAge(int age); 
 
 	int getClassNumber();
 
-	void setClassNumber(int number);
+	void setClassNumber(int classNumber);
 
 	char getClassLetter();
 
-	void setClassLetter(char letter);
+	void setClassLetter(char classLetter);
 
 	bool isAlive();
 
-	void setAlive(bool a);
+	void setAlive(bool alive);
 
-	void setMarks(int* ms, int c);
+	void setMarks(int* marks, int c);
 
 	int* getMarks();
 
