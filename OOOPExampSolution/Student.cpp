@@ -1,18 +1,13 @@
 #include "Student.h"
 
 
-Student::Student() {
+Student::Student() : Student(0, "No name", 10, 1, 'A', true) {
+	cout << "lol\n";
 	count = 3;
-	id = 0;
-	name = "";
-	age = 0;
 	marks = new int[3] {10, 9, 7};
-	classNumber = 0;
-	classLetter = '\0';
-	alive = false;
 }
 
-Student::Student(int id, string name, int age, int classNumber, char classLetter, double mark, bool alive) {
+Student::Student(int id, string name, int age, int classNumber, char classLetter, bool alive) {
 	this->id = id;
 	count = 3;
 	this->name = name;
@@ -23,30 +18,26 @@ Student::Student(int id, string name, int age, int classNumber, char classLetter
 	this->alive = alive;
 }
 
-Student::Student(string name, int age) {
-	this->id = 0;
-	this->count = 3;
+Student::Student(string name, int age) : Student() {
+	cout << "C0nstr wis argum\n";
 	this->name = name;
 	this->age = age;
-	this->marks = new int[3] {10, 9, 7};
-	this->classNumber = 0;
-	this->classLetter = '\0';
-	this->alive = true;
 }
 
-Student::Student(const Student& student) {
+Student::Student(const Student& student) : Student(student.id, student.name, student.age , student.classNumber, student.classLetter, student.alive) {
 	cout << "Student copy-cinstructor//]]..//";
-	this->id = student.id;
-	this->count = 3;
-	this->name = student.name;
-	this->age = student.age;
-	this->marks = new int[3] {
-		student.marks[0],
-			student.marks[1],
-			student.marks[2]};
-	this->classNumber = student.classNumber;
-	this->classLetter = student.classLetter;
-	this->alive = student.alive;
+
+	if (student.marks != NULL && student.count > 0) {
+		count = student.count;
+
+		marks = new int[count];
+
+		for (int i = 0; i < count; i++)
+		{
+			marks[i] = student.marks[i];
+		}
+	}
+
 }
 
 Student::~Student() {

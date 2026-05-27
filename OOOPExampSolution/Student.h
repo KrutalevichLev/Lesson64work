@@ -18,7 +18,7 @@ public:
 
 	Student();
 
-	Student(int id, string name, int age, int classNumber, char classLetter, double mark, bool alive);
+	Student(int id, string name, int age, int classNumber, char classLetter, bool alive);
 
 	Student(string name, int age);
 
